@@ -110,12 +110,9 @@ truncate table [Dim_Location];
 truncate table [Dim_Date];
 truncate table [Dim_Customer];
 
-
+USE Ecom_CusBe_dw
 -- Drop tables
-DROP TABLE [Fact_Raw];
-DROP TABLE  [Fact1];
-DROP TABLE  [Fact2];
-DROP TABLE  [Fact3];
+DROP TABLE  [Fact_Raw];
 DROP TABLE [Fact];
 DROP TABLE [Dim_Transaction];
 DROP TABLE [Dim_Discount];

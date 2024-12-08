@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0ec31287-723f-4739-845a-4efcab62e45c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="777712a0-e827-4feb-9547-706c4a55eaca" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Discount</ID>
   <Name>Dim Discount</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1938" scrolltop="-4467" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7260" y="11240" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1853" scrolltop="-4647" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7049" y="11240" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
@@ -19,9 +19,9 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_Discount" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3344" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_Discount" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3302" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000100d000003090000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e60c00009b070000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -47,11 +47,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-1938</Value>
+      <Value>-1853</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-4467</Value>
+      <Value>-4647</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,57 +68,53 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b2985c1a-e049-4f54-b2c1-75f59a008b86">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e465a10f-8b4a-42be-9543-aaf1e657de53">
     <DataSourceViewID>Ecom Cus Be Dw</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="bbde828b-1e2b-404a-a107-8181bc77fcac">
+  <ErrorConfiguration dwd:design-time-name="223c3d61-31f2-4116-8489-67077b44f657">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="5f0fe79c-e892-4736-b472-1b859e81c001">
+    <Attribute dwd:design-time-name="c151e513-4abb-4d83-9bc1-f7f1bc234fc6">
       <ID>Discount Id</ID>
       <Name>Discount Id</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="44289607-c3ca-443c-99ab-ccb927df507b">
+        <KeyColumn dwd:design-time-name="bad32900-5edc-4548-88b4-16a6ab195e5a">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1e0b4dd7-c5b6-4d29-a69b-37c17a993cc5">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7cdeb67f-287f-41e4-b72d-3bdfbb8547e0">
             <TableID>dbo_Dim_Discount</TableID>
             <ColumnID>discount_id</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="56e1ea17-f294-44b0-880e-dfbe9f6d9f0d">
+        <AttributeRelationship dwd:design-time-name="75ed1204-4857-4006-aaee-27b84542af3c">
           <AttributeID>Discount Availed</AttributeID>
           <Name>Discount Availed</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="2e55f85e-c57a-4f20-92f0-522d4960065f">
+        <AttributeRelationship dwd:design-time-name="98e34339-d203-4d53-9097-208b7ba187b6">
           <AttributeID>Discount Name</AttributeID>
           <Name>Discount Name</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="cb147abc-45ff-4790-9544-6e5a19fdc498">
-          <AttributeID>Discount Amount</AttributeID>
-          <Name>Discount Amount</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="ddcfc249-e60a-47b6-b39a-deaadff9d56f">
+    <Attribute dwd:design-time-name="ef106200-7849-4212-a12c-ac2275648bae">
       <ID>Discount Availed</ID>
       <Name>Discount Availed</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0594be55-38ea-45d5-9bd8-853cb8293245">
+        <KeyColumn dwd:design-time-name="2be82e10-432a-4aef-8c14-a66af6454097">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="179cbddd-e836-47fe-b2c6-2db9a9f04ce7">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8758fde7-2c51-42f0-aecc-1a62bb3a147e">
             <TableID>dbo_Dim_Discount</TableID>
             <ColumnID>Discount_x0020_Availed</ColumnID>
           </Source>
@@ -127,31 +123,16 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="b22062c9-fd45-44ef-aa60-b9b20548633e">
+    <Attribute dwd:design-time-name="af30223a-93af-4a20-8d5f-c22142379d80">
       <ID>Discount Name</ID>
       <Name>Discount Name</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="20f62820-e612-474b-9ab0-8ee0d94c965b">
+        <KeyColumn dwd:design-time-name="d263a7cf-cb36-42bf-a6e2-a663d431ebb8">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0c26d5c4-8827-4891-80e2-976b9713ed19">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b8d79649-1512-4770-b49f-52cb77cb4096">
             <TableID>dbo_Dim_Discount</TableID>
             <ColumnID>Discount_x0020_Name</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="00dc6823-9516-4d09-8d98-3cb384894103">
-      <ID>Discount Amount</ID>
-      <Name>Discount Amount</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="4b29caa6-9cf5-4fcd-94c8-c21dcaee79a9">
-          <DataType>Double</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="9434c59a-7507-4f81-a153-d6624d6f5a93">
-            <TableID>dbo_Dim_Discount</TableID>
-            <ColumnID>Discount_x0020_Amount</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>

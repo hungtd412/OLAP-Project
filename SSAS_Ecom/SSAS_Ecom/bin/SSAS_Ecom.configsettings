@@ -16,19 +16,19 @@
         <ID>Dim Date</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Transaction</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Customer</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Discount</ID>
+        <ID>Dim Product</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Location</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Product</ID>
+        <ID>Dim Discount</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Customer</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Transaction</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

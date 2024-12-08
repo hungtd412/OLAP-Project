@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS_Ecom</Database>
+    <Server>MSI</Server>
+    <ConnectionString>Data Source=MSI;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>WQyZHobmj8W0UtL8khoU00Am4pA=07-12-24 2:30:34 PM07-12-24 2:30:34 PM</TimeStamp>
+        <ID>
+          <String>Ecom Cus Be Dw</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>oy0rOqjnxe3hgPg9DngRTyg9NPU=07-12-24 2:30:50 PM07-12-24 2:30:50 PM</TimeStamp>
+        <ID>
+          <String>Ecom Cus Be Dw</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Q+csmK+XCFuV8k5GbsbyPQ5JMc4=07-12-24 3:21:19 PM07-12-24 2:42:41 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>7GaOHWOoIdAaf5NGE5Ye4/6mO/0=07-12-24 3:23:10 PM07-12-24 3:22:26 PM</TimeStamp>
+        <ID>
+          <String>Dim Transaction</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>doQ+RB9ZSHvg8c6/FcqziUY/YOU=07-12-24 3:23:10 PM07-12-24 3:22:26 PM</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>4yTa5nSs7nI+oDcDGleHaGDAUUE=07-12-24 3:23:10 PM07-12-24 3:22:26 PM</TimeStamp>
+        <ID>
+          <String>Dim Discount</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5OjYnkBOWtNM5D6X1ibyg6UyyVs=07-12-24 3:22:26 PM07-12-24 3:22:26 PM</TimeStamp>
+        <ID>
+          <String>Dim Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>HHCImaNO3Y9Xu33c414W3LqRrgA=07-12-24 3:22:26 PM07-12-24 3:22:26 PM</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>XiCWdzJJ2QTTJ1Gs3aGz1zKwrNE=07-12-24 3:23:10 PM07-12-24 3:22:26 PMcDmmij1+DKOFf4oarKA/aU3jo9Y=07-12-24 3:22:26 PM07-12-24 3:22:26 PM</TimeStamp>
+        <ID>
+          <String>Ecom Cus Be Dw</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>+c4VLnt+fQQ53d6nrc3GyalNNpI=07-12-24 2:12:24 PM07-12-24 2:12:24 PM</TimeStamp>
+      <ID>
+        <String>SSAS_Ecom</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-12-07T08:23:12.683333Z</LastDeployed>
+</DeploymentSnapshot>

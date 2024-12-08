@@ -1,0 +1,26 @@
+	WITH 
+MEMBER [Measures].[Discount Rate] AS
+    ([Measures].[Discount Amount INR] / [Measures].[Gross Amount]) * 100
+
+MEMBER [Measures].[Net Revenue] AS
+    [Measures].[Gross Amount] - [Measures].[Discount Amount INR]
+
+
+	 SELECT NON EMPTY { 
+	 [Measures].[Gross Amount], 
+        [Measures].[Discount Amount INR],
+        [Measures].[Net Revenue],
+        [Measures].[Discount Rate] 
+	 } ON COLUMNS, 
+
+	 NON EMPTY { 
+	 ([Dim Product].[Product Category].[Product Category].ALLMEMBERS * 
+	 [Dim Customer].[Age Group].[Age Group].ALLMEMBERS * 
+	 [Dim Date].[Month].[Month].ALLMEMBERS * 
+	 [Dim Date].[Year].[Year].ALLMEMBERS ) 
+	 }  ON ROWS 
+	 FROM [Ecom_Cus_Be_Dw]
+
+
+
+

@@ -8,52 +8,52 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Ecom Cus Be Dw.cube</Name>
-      <FullPath>Ecom Cus Be Dw.cube</FullPath>
+      <Name>Ecom_Cus_Be_Dw.cube</Name>
+      <FullPath>Ecom_Cus_Be_Dw.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Ecom Cus Be Dw.partitions</Name>
-          <FullPath>Ecom Cus Be Dw.partitions</FullPath>
+          <Name>Ecom_Cus_Be_Dw.partitions</Name>
+          <FullPath>Ecom_Cus_Be_Dw.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Date.dim</Name>
-      <FullPath>Dim Date.dim</FullPath>
+      <Name>Dim_Date.dim</Name>
+      <FullPath>Dim_Date.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Product.dim</Name>
-      <FullPath>Dim Product.dim</FullPath>
+      <Name>Dim_Product.dim</Name>
+      <FullPath>Dim_Product.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Location.dim</Name>
-      <FullPath>Dim Location.dim</FullPath>
+      <Name>Dim_Location.dim</Name>
+      <FullPath>Dim_Location.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Discount.dim</Name>
-      <FullPath>Dim Discount.dim</FullPath>
+      <Name>Dim_Discount.dim</Name>
+      <FullPath>Dim_Discount.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Customer.dim</Name>
-      <FullPath>Dim Customer.dim</FullPath>
+      <Name>Dim_Customer.dim</Name>
+      <FullPath>Dim_Customer.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Transaction.dim</Name>
-      <FullPath>Dim Transaction.dim</FullPath>
+      <Name>Dim_Transaction.dim</Name>
+      <FullPath>Dim_Transaction.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
-      <Name>Ecom Cus Be Dw.ds</Name>
-      <FullPath>Ecom Cus Be Dw.ds</FullPath>
+      <Name>Ecom_Cus_Be_Dw.ds</Name>
+      <FullPath>Ecom_Cus_Be_Dw.ds</FullPath>
     </ProjectItem>
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>Ecom Cus Be Dw.dsv</Name>
-      <FullPath>Ecom Cus Be Dw.dsv</FullPath>
+      <Name>Ecom_Cus_Be_Dw.dsv</Name>
+      <FullPath>Ecom_Cus_Be_Dw.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>

@@ -1,6 +1,6 @@
-﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="52410db4-68cb-4c01-b5f5-78b26e008408" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="69a31114-4fc8-4198-9a0c-55b939ede228" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Ecom Cus Be Dw</ID>
-  <Name>Ecom Cus Be Dw</Name>
+  <Name>Ecom_Cus_Be_Dw</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
   <Annotations>
@@ -14,7 +14,6 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
-      <Value></Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
@@ -45,7 +44,7 @@
       <xs:element name="Ecom_x0020_Cus_x0020_Be_x0020_Dw" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="44879ecc-ad74-47c7-bdf1-0fca6cb4fddf">
         <xs:complexType>
           <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="dbo_Fact" msprop:DbTableName="Fact" msprop:FriendlyName="Fact" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="3e8558e0-5c7f-4e6e-89d0-d197643f285e">
+            <xs:element name="dbo_Fact" msprop:DbSchemaName="dbo" msprop:design-time-name="3e8558e0-5c7f-4e6e-89d0-d197643f285e" msprop:FriendlyName="Fact" msprop:TableType="Table" msprop:DbTableName="Fact">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="CID" msprop:FriendlyName="CID" msprop:DbColumnName="CID" msprop:design-time-name="1e8047f3-c7ec-43a9-8e03-9b8b8bafd813">
@@ -84,7 +83,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_Dim_Location" msprop:DbTableName="Dim_Location" msprop:FriendlyName="Dim_Location" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="05e75a82-7736-43e9-859b-fa16beb340a3">
+            <xs:element name="dbo_Dim_Location" msprop:DbSchemaName="dbo" msprop:design-time-name="05e75a82-7736-43e9-859b-fa16beb340a3" msprop:FriendlyName="Dim_Location" msprop:TableType="Table" msprop:DbTableName="Dim_Location">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="Location" msprop:FriendlyName="Location" msprop:DbColumnName="Location" msprop:design-time-name="ffb64b01-2c43-4e68-a659-0c411d143198">
@@ -97,7 +96,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_Dim_Customer" msprop:DbTableName="Dim_Customer" msprop:FriendlyName="Dim_Customer" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="d63f454b-f7b7-4baf-9ec8-e609ad34c4ed">
+            <xs:element name="dbo_Dim_Customer" msprop:DbSchemaName="dbo" msprop:design-time-name="d63f454b-f7b7-4baf-9ec8-e609ad34c4ed" msprop:FriendlyName="Dim_Customer" msprop:TableType="Table" msprop:DbTableName="Dim_Customer">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="CID" msprop:FriendlyName="CID" msprop:DbColumnName="CID" msprop:design-time-name="fb3efeb5-9700-41aa-8393-1f8ab353ec2c">
@@ -124,7 +123,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_Dim_Product" msprop:DbTableName="Dim_Product" msprop:FriendlyName="Dim_Product" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="9523bb1f-5fa3-47cb-97fb-b507aeaafb9a">
+            <xs:element name="dbo_Dim_Product" msprop:DbSchemaName="dbo" msprop:design-time-name="9523bb1f-5fa3-47cb-97fb-b507aeaafb9a" msprop:FriendlyName="Dim_Product" msprop:TableType="Table" msprop:DbTableName="Dim_Product">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="Product_x0020_Category" msprop:FriendlyName="Product Category" msprop:DbColumnName="Product Category" msprop:design-time-name="539e51f6-1069-42b2-950c-47fa59a2365f">
@@ -137,7 +136,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_Dim_Discount" msprop:DbTableName="Dim_Discount" msprop:FriendlyName="Dim_Discount" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="d4be99a4-5e33-4707-ad71-4b2ff789f7dc">
+            <xs:element name="dbo_Dim_Discount" msprop:DbSchemaName="dbo" msprop:design-time-name="d4be99a4-5e33-4707-ad71-4b2ff789f7dc" msprop:FriendlyName="Dim_Discount" msprop:TableType="Table" msprop:DbTableName="Dim_Discount">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="discount_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="discount_id" msprop:DbColumnName="discount_id" msprop:design-time-name="b16747f5-c63b-493e-9d20-64baa991829b" type="xs:int" />
@@ -158,7 +157,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_Dim_Transaction" msprop:DbTableName="Dim_Transaction" msprop:FriendlyName="Dim_Transaction" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="cb35e996-104a-45f3-8077-34ad105c4f56">
+            <xs:element name="dbo_Dim_Transaction" msprop:DbSchemaName="dbo" msprop:design-time-name="cb35e996-104a-45f3-8077-34ad105c4f56" msprop:FriendlyName="Dim_Transaction" msprop:TableType="Table" msprop:DbTableName="Dim_Transaction">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="TID" msprop:FriendlyName="TID" msprop:DbColumnName="TID" msprop:design-time-name="c068a3a0-b5c1-4b3e-9a21-0705a94b3635">
@@ -178,7 +177,7 @@
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
-            <xs:element name="dbo_Dim_Date" msprop:DbTableName="Dim_Date" msprop:FriendlyName="Dim_Date" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="61d118fe-81b7-4309-91d9-84b21b83410d">
+            <xs:element name="dbo_Dim_Date" msprop:DbSchemaName="dbo" msprop:design-time-name="61d118fe-81b7-4309-91d9-84b21b83410d" msprop:FriendlyName="Dim_Date" msprop:TableType="Table" msprop:DbTableName="Dim_Date">
               <xs:complexType>
                 <xs:sequence>
                   <xs:element name="date_id" msprop:FriendlyName="date_id" msprop:DbColumnName="date_id" msprop:design-time-name="0c2f4125-bb96-4639-b4c9-c2e0a3ea0d34" type="xs:dateTime" />

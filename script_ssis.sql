@@ -86,12 +86,12 @@ CREATE TABLE [Fact] (
     [Net_Amount] float
 )
 
-drop table Fact
 
-select * from [Dim_Date]
+USE Ecom_CusBe_dw;
+select distinct(day) from [Dim_Date] where month = 1 and year = 2022
 select * from Dim_Discount
 select * from Fact
-USE Ecom_CusBe_dw;
+
 
 -- Drop foreign key constraints
 ALTER TABLE [Fact] DROP CONSTRAINT FK_Fact_Dim_Customer;
@@ -121,7 +121,7 @@ DROP TABLE [Dim_Location];
 DROP TABLE [Dim_Date];
 DROP TABLE [Dim_Customer];
  
-select * from [Fact]
+select * from [Dim_Discount]
 
 
 /*

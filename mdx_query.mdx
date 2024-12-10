@@ -1,6 +1,6 @@
 //cau 1 Tính tổng số tiền giảm giá (Discount Amount) 
 //theo từng danh mục sản phẩm (Product Category) và giới tính (Gender).
-
+//pivot
 SELECT 
     NON EMPTY { [Measures].[Discount Amount INR] } ON COLUMNS,
     NON EMPTY { 
@@ -10,21 +10,19 @@ SELECT
 FROM [Ecom_Cus_Be_Dw];
 
 
-//cau 2 Truy vấn khách hàng nào (Customer ID) 
+//cau 2 Truy vấn 10 khách hàng (Customer ID) 
 //nhận được tổng số tiền giảm giá lớn nhất trong năm 2023.
+//slice and dice
 SELECT 
     NON EMPTY { [Measures].[Discount Amount INR] } ON COLUMNS, 
-    NON EMPTY { [Dim_Customer].[CID].[CID].ALLMEMBERS } ON ROWS 
-FROM 
-    (SELECT 
-        (TOPCOUNT([Dim_Customer].[CID].Children, 10, [Measures].[Discount Amount INR])) ON COLUMNS 
-     FROM 
-        (SELECT 
-            { [Dim_Date].[Year].&[2023] } ON COLUMNS 
-         FROM [Ecom_Cus_Be_Dw])) 
+    NON EMPTY { 
+		TOPCOUNT([Dim_Customer].[CID].Children, 
+		10, 
+		[Measures].[Discount Amount INR])
+	} ON ROWS 
+FROM [Ecom_Cus_Be_Dw]
 WHERE 
     ( [Dim_Date].[Year].&[2023] );
-
 
 
 /*
@@ -40,10 +38,7 @@ SELECT
         ([Dim_Customer].[Age Group].[Age Group].ALLMEMBERS * 
          [Dim_Customer].[Gender].[Gender].ALLMEMBERS) 
     } ON ROWS 
-FROM 
-    (SELECT 
-        { [Dim_Discount].[Discount Availed].&[Yes] } ON COLUMNS 
-     FROM [Ecom_Cus_Be_Dw]) 
+FROM  [Ecom_Cus_Be_Dw]
 WHERE 
     ( [Dim_Discount].[Discount Availed].&[Yes] );
 
@@ -55,33 +50,18 @@ và không giảm giá (Discount Availed = Yes/No)
 theo từng ngày (Day) trong tháng 1 năm 2022. 
 Điều này giúp xác định xu hướng sử dụng giảm giá trong tháng.
 */
-WITH MEMBER [Measures].[Discount_Availed_Rate] AS 
-    ([Measures].[Fact Count], [Dim_Discount].[Discount Availed].&[Yes]) / 
+//drill down
+WITH MEMBER [Measures].[Discount_Availed_Rate] AS
+    ([Measures].[Fact Count], [Dim_Discount].[Discount Availed].&[Yes]) /
     ([Measures].[Fact Count], [Dim_Discount].[Discount Availed].&[No])
 
 SELECT 
-    NON EMPTY { [Measures].[Discount_Availed_Rate] } ON COLUMNS, 
-    NON EMPTY { ([Dim_Date].[Day].[Day].ALLMEMBERS) } ON ROWS 
+    NON EMPTY { [Measures].[Discount_Availed_Rate] } ON COLUMNS,
+    NON EMPTY { 
+        [Dim_Date].[Hierarchy].[Month].&[1]&[1]&[2022].children
+    } ON ROWS
 FROM 
-    ( 
-        SELECT 
-            ( { [Dim_Date].[Hierarchy].[Month].&[1]&[1]&[2022] } ) ON COLUMNS 
-        FROM [Ecom_Cus_Be_Dw]
-    ) 
-WHERE ( [Dim_Date].[Hierarchy].[Month].&[1]&[1]&[2022] ) ;
-
-
-WITH MEMBER [Measures].[Discount_Availed_Rate] AS 
-    ([Measures].[Fact Count], [Dim_Discount].[Discount Availed].&[Yes]) / 
-    ([Measures].[Fact Count], [Dim_Discount].[Discount Availed].&[No])
-
-SELECT 
-    NON EMPTY { [Measures].[Discount_Availed_Rate] } ON COLUMNS, 
-    NON EMPTY { ([Dim_Date].[Day].MEMBERS) } ON ROWS 
-FROM 
-    [Ecom_Cus_Be_Dw]
-WHERE 
-    ( [Dim_Date].[Hierarchy].[Month].&[1]&[1]&[2022] );
+    [Ecom_Cus_Be_Dw];
 
 /*
 cau5
@@ -90,23 +70,7 @@ có tổng số tiền giảm giá (Discount Amount) cao nhất,
 tính theo từng nhóm tuổi (Age Group). 
 Phân tích giúp nhận diện khu vực và nhóm tuổi có mức độ giảm giá cao nhất.
 */
-//dung tich de cat
-SELECT 
-    NON EMPTY { [Measures].[Discount Amount INR] } ON COLUMNS, 
-    NON EMPTY { 
-        [Dim_Location].[Location].[Location].ALLMEMBERS * 
-        [Dim_Customer].[Age Group].[Age Group].ALLMEMBERS 
-    } ON ROWS 
-FROM 
-    ( 
-        SELECT 
-            TOPCOUNT([Dim_Location].[Location].Children, 
-			3, 
-			[Measures].[Discount Amount INR]) 
-            ON COLUMNS 
-        FROM [Ecom_Cus_Be_Dw]
-    ) ;
-	//dung generate
+
 SELECT 
 NON EMPTY { [Measures].[Discount Amount INR] } ON COLUMNS, 
 NON EMPTY { 
@@ -141,6 +105,7 @@ cau 7
 Phân tích tỷ lệ giảm giá và doanh thu 
 theo nhóm sản phẩm và theo thời gian (Năm và Quý)
 */
+//roll up
 WITH 
     MEMBER [Measures].[Discount_Rate] AS 
         ROUND(([Measures].[Discount Amount INR] / [Measures].[Gross Amount]) * 100, 2) 
@@ -150,8 +115,8 @@ SELECT
         [Measures].[Discount_Rate] 
     } ON COLUMNS, 
     NON EMPTY { 
-        ([Dim_Date].[Year].[Year].ALLMEMBERS * 
-         [Dim_Date].[Quarter].[Quarter].ALLMEMBERS * 
+        ([Dim_Date].[Hierarchy].[Quarter].ALLMEMBERS * 
+         [Dim_Date].[Year].[Year] * 
          [Dim_Product].[Product Category].[Product Category].ALLMEMBERS) 
     } ON ROWS 
 FROM 
@@ -163,14 +128,14 @@ Truy vấn top 3 danh mục sản phẩm xuất hiện nhiều nhất
 trong các giao dịch theo quý của năm 2023
 */
 
+//drill down
 SELECT 
     NON EMPTY { [Measures].[Fact Count] } ON COLUMNS, 
     NON EMPTY { 
-	([Dim_Date].[Quarter].[Quarter].ALLMEMBERS 
+	([Dim_Date].[Hierarchy].[Year].&[2023].children 
 	* TOPCOUNT([Dim_Product].[Product Category].Children, 3, [Measures].[Fact Count]) 
 	)} ON ROWS 
-FROM [Ecom_Cus_Be_Dw]
-WHERE ( [Dim_Date].[Year].&[2023] );
+FROM [Ecom_Cus_Be_Dw];
 
 
 /*
@@ -178,26 +143,15 @@ cau 9
 Tìm mã giảm giá nào được sử dụng 
 nhiều nhất theo khu vực và theo nhóm sản phẩm
 */
-
 SELECT 
     NON EMPTY { [Measures].[Fact Count] } ON COLUMNS, 
     NON EMPTY { 
         ([Dim_Location].[Location].[Location].ALLMEMBERS * 
          [Dim_Product].[Product Category].[Product Category].ALLMEMBERS * 
-         [Dim_Discount].[Discount Name].[Discount Name].ALLMEMBERS) 
+         TOPCOUNT([Dim_Discount].[Discount Name].Children, 1, [Measures].[Fact Count])) 
     } ON ROWS 
-FROM ( 
-    SELECT ( 
-        TOPCOUNT([Dim_Discount].[Discount Name].Children, 1, [Measures].[Fact Count]) 
-    ) ON COLUMNS 
-    FROM ( 
-        SELECT ( { [Dim_Discount].[Discount Availed].&[Yes] } ) ON COLUMNS 
-        FROM [Ecom_Cus_Be_Dw] 
-    ) 
-) 
+FROM [Ecom_Cus_Be_Dw]
 WHERE ( [Dim_Discount].[Discount Availed].&[Yes] );
-
-
 
 /*
 cau 10
@@ -205,7 +159,7 @@ Phân tích Doanh thu và Giảm giá theo Location và Product Category,
 lọc ra những dữ liệu có tỷ lệ giảm giá (Discount Rate) 
 lớn hơn một mức cụ thể (45%) 
 */
-
+//filter
 SELECT 
     { [Measures].[Discount Rate], 
 	[Measures].[Discount Amount INR], 
@@ -216,7 +170,7 @@ SELECT
         [Measures].[Discount Rate] > 4.5
     ) ON ROWS 
 FROM [Ecom_Cus_Be_Dw];
-
+//having
 SELECT 
     { [Measures].[Discount Rate], 
 	[Measures].[Discount Amount INR], 
@@ -226,129 +180,3 @@ SELECT
 HAVING [Measures].[Discount Rate] > 4.5 
 ON ROWS
 FROM [Ecom_Cus_Be_Dw]
-
-    
-
- 
-
-
-
-
-
-
-
-//====================================================
-WITH 
-MEMBER [Measures].[Total Net Amount] AS 
-    [Measures].[Net Amount]
-
-SET [TopProductCategoryByNetAmount] AS 
-    TopCount(
-        [Dim_Product].[Product Category].[Product Category].Members,
-        1,
-        [Measures].[Total Net Amount]
-    )
-
-SELECT 
-NON EMPTY 
-    {[Measures].[Total Net Amount]} ON COLUMNS,
-NON EMPTY 
-    [TopProductCategoryByNetAmount] ON ROWS
-FROM [Ecom_Cus_Be_Dw];
-
-
-//cau 9
-	WITH 
-MEMBER [Measures].[Discount Rate] AS
-    ([Measures].[Discount Amount INR] / [Measures].[Gross Amount]) * 100
-
-MEMBER [Measures].[Net Revenue] AS
-    [Measures].[Gross Amount] - [Measures].[Discount Amount INR]
-
-
-	 SELECT NON EMPTY { 
-	 [Measures].[Gross Amount], 
-        [Measures].[Discount Amount INR],
-        [Measures].[Net Revenue],
-        [Measures].[Discount Rate] 
-	 } ON COLUMNS, 
-
-	 NON EMPTY { 
-	 ([Dim_Product].[Product Category].[Product Category].ALLMEMBERS * 
-	 [Dim_Customer].[Age Group].[Age Group].ALLMEMBERS * 
-	 [Dim_Date].[Month].[Month].ALLMEMBERS * 
-	 [Dim_Date].[Year].[Year].ALLMEMBERS ) 
-	 }  ON ROWS 
-	 FROM [Ecom_Cus_Be_Dw];
-//cau 9
-WITH 
-MEMBER [Measures].[Total Discount] AS 
-    SUM([Measures].[Discount Amount INR])
-
-MEMBER [Measures].[Total Revenue] AS 
-    SUM([Measures].[Gross Amount])
-
-SELECT 
-    { 
-        [Measures].[Total Revenue], 
-        [Measures].[Total Discount] 
-    } ON COLUMNS,
-
-    NON EMPTY 
-    (
-        [Dim_Location].[Location].[Location].MEMBERS *
-        [Dim_Transaction].[Purchase Method].[Purchase Method].MEMBERS *
-        [Dim_Customer].[Age Group].[Age Group].MEMBERS *
-        [Dim_Date].[Year].[Year].MEMBERS *
-        [Dim_Date].[Quarter].[Quarter].MEMBERS 
-    ) ON ROWS
-
-FROM 
-    [Ecom_Cus_Be_Dw]
-
-
-
-	SELECT 
-  NON EMPTY { [Measures].[Discount Amount INR] } ON COLUMNS,
-  NON EMPTY 
-  { 
-    ORDER(
-      [Dim_Product].[Product Category].[Product Category].MEMBERS * 
-      [Dim_Customer].[Gender].[Gender].MEMBERS,
-      [Measures].[Discount Amount INR],
-      BDESC
-    ) 
-  } ON ROWS
-FROM 
-  [Ecom_Cus_Be_Dw]
-//cau10
-WITH
-    -- Tính tỷ lệ giảm giá (Discount Rate)
-    MEMBER [Measures].[Discount_Rate] AS
-        ([Measures].[Discount_Amount_INR] / [Measures].[Gross_Amount]) * 100
-
-    -- Tính tổng doanh thu
-    MEMBER [Measures].[Total_Revenue] AS
-        SUM([Measures].[Gross_Amount])
-
-    -- Tính tổng giảm giá
-    MEMBER [Measures].[Total_Discount] AS
-        SUM([Measures].[Discount_Amount_INR])
-
-SELECT 
-    NON EMPTY 
-        FILTER(
-            [Dim_Location].[Location].[Location].MEMBERS *
-            [Dim_Product].[Product_Category].[Product_Category].MEMBERS,
-            ([Measures].[Discount_Rate] > 20) 
-        ) ON ROWS,
-
-    NON EMPTY 
-        {
-            [Measures].[Total_Revenue], 
-            [Measures].[Total_Discount],
-            [Measures].[Discount_Rate]
-        } ON COLUMNS
-
-FROM 
-    [Ecom_Cus_Be_Dw]
